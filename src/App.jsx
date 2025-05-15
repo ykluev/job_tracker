@@ -44,8 +44,15 @@ const App = () => {
     
     const updated_jobs = jobs.map( j  => {
       if (j.id === id) {
-        console.log("HERE")
-        j.status = event.target.value
+        const jobObject = {
+                            ...j,
+                            status: event.target.value
+
+                          }
+
+        return jobObject
+      } else {
+        return j
       }
     })
 
